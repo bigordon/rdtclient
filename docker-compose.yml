@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+    rdtclient:
+        container_name: rdtclient
+        volumes:
+            - 'D:/Downloads/:/data/downloads'
+            - 'D:/Docker/rdt-client/:/data/db'
+        image: rogerfar/rdtclient
+        restart: always
+        logging:
+            driver: json-file
+            options:
+                max-size: 10m
+        ports:
+            - '6500:6500'
