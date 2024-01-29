@@ -1,17 +1,16 @@
-version: "3"
+version: '3.3'
 services:
-  rdtclient:
-    container_name: "rdtclient"
-    environment:
-      - "PGID=1000"
-      - "PUID=1000"
-    ports:
-      - "6500/tcp"
-    hostname: "rdtclient"
-    image: "laster13/rdtclient:amd64"
-    restart: "unless-stopped"
-    volumes:
-      - "/etc/localtime:/etc/localtime:ro"
-      - "/mnt:/mnt"
-      - "/opt/rdtclient/data:/data"
-      - "/opt/rdtclient/data/db:/data/db"
+    rdtclient:
+      container_name: "rdtclient"
+      environment:
+        - "PGID=1000"
+        - "PUID=1000"
+      volumes:
+        - "/etc/localtime:/etc/localtime:ro"
+        - "/mnt:/mnt"
+        - "/opt/rdtclient/data:/data"
+        - "/opt/rdtclient/data/db:/data/db"
+      image: "laster13/rdtclient:amd64"
+      restart: "unless-stopped"
+      ports:
+        - '6500:6500'
