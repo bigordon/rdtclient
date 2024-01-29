@@ -10,7 +10,7 @@ services:
         - "/mnt:/mnt"
         - "/opt/rdtclient/data:/data"
         - "/opt/rdtclient/data/db:/data/db"
-      image: "laster13/rdtclient:amd64"
+      image: "rogerfar/rdtclient"
       restart: "unless-stopped"
       ports:
         - '6500:6500'
